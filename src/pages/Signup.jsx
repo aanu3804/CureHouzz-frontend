@@ -136,10 +136,10 @@ const Signup = () => {
   
     console.log("Request Body:", requestBody); // Debugging: Log API request body
   
-    const apiBase = "http://localhost:5000"; // Ensure the correct base URL
+    const apiBase = "https://curehouzz-backend.onrender.com"; // Ensure the correct base URL
     const apiEndpoint = formData.role === "doctor" 
-  ? "http://localhost:5000/doctor/signup" // ✅ Correct API for doctor signup
-  : "http://localhost:5000/signup";
+  ? "https://curehouzz-backend.onrender.com/doctor/signup" // ✅ Correct API for doctor signup
+  : "https://curehouzz-backend.onrender.com/signup";
   
     try {
       console.log("Sending request to:", apiEndpoint); // Debugging: Log API endpoint
@@ -175,7 +175,7 @@ const Signup = () => {
 
     setLoading(true);
     // Determine the API base URL based on the role
-    const apiBase = formData.role === "doctor" ? "http://localhost:5000/doctor" : "http://localhost:5000";
+    const apiBase = formData.role === "doctor" ? "https://curehouzz-backend.onrender.com/doctor" : "https://curehouzz-backend.onrender.com";
     const apiEndpoint = `${apiBase}/verify-otp`;
 
     try {
@@ -200,7 +200,7 @@ const Signup = () => {
   const resendOtpHandler = async () => {
     setLoading(true);
     // Determine the API base URL based on the role
-    const apiBase = formData.role === "doctor" ? "http://localhost:5000/doctor" : "http://localhost:5000";
+    const apiBase = formData.role === "doctor" ? "https://curehouzz-backend.onrender.com/doctor" : "https://curehouzz-backend.onrender.com";
     const apiEndpoint = `${apiBase}/resend-otp`;
 
     try {

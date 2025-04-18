@@ -29,9 +29,9 @@ const Dashboard = () => {
             if (user?.email) {
                 try {
                     const [appointmentsRes, labsRes, medicineRes] = await Promise.all([
-                        fetch(`http://localhost:5000/appointments/${encodeURIComponent(user.email)}`),
-                        fetch(`http://localhost:5000/lab/${encodeURIComponent(user.email)}`),
-                        fetch(`http://localhost:5000/book-medicine/${encodeURIComponent(user.email)}`),
+                        fetch(`https://curehouzz-backend.onrender.com/appointments/${encodeURIComponent(user.email)}`),
+                        fetch(`https://curehouzz-backend.onrender.com/lab/${encodeURIComponent(user.email)}`),
+                        fetch(`https://curehouzz-backend.onrender.com/book-medicine/${encodeURIComponent(user.email)}`),
                     ]);
     
                     const appointmentsData = appointmentsRes.ok ? await appointmentsRes.json() : [];
@@ -101,7 +101,7 @@ const Dashboard = () => {
     
     const handleUpdateProfile = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/update-profile/${encodeURIComponent(user.email)}`, {
+            const response = await fetch(`https://curehouzz-backend.onrender.com/update-profile/${encodeURIComponent(user.email)}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -143,7 +143,7 @@ const Dashboard = () => {
     const handleDeleteAccount = async () => {
         try {
             // Validate password first (Using Login API)
-            const loginResponse = await fetch("http://localhost:5000/auth/login", {
+            const loginResponse = await fetch("https://curehouzz-backend.onrender.com/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: user.email, password }),
@@ -157,7 +157,7 @@ const Dashboard = () => {
             }
     
             // Proceed to delete account after password validation
-            const deleteResponse = await fetch(`http://localhost:5000/delete-account/${encodeURIComponent(user.email)}`, {
+            const deleteResponse = await fetch(`https://curehouzz-backend.onrender.com/delete-account/${encodeURIComponent(user.email)}`, {
                 method: "DELETE",
             });
     
@@ -192,7 +192,7 @@ const Dashboard = () => {
         if (!window.confirm(`Delete medicine order for ${order.medicine}?`)) return;
         try {
             const response = await fetch(
-                `http://localhost:5000/book-medicine/${encodeURIComponent(user.email)}/${encodeURIComponent(order.medicine)}`,
+                `https://curehouzz-backend.onrender.com/book-medicine/${encodeURIComponent(user.email)}/${encodeURIComponent(order.medicine)}`,
                 { method: "DELETE" }
             );
             if (response.ok) {
@@ -211,7 +211,7 @@ const Dashboard = () => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/lab/${encodeURIComponent(user.email)}/${encodeURIComponent(labTest.date)}/${encodeURIComponent(labTest.time)}`,
+                `https://curehouzz-backend.onrender.com/lab/${encodeURIComponent(user.email)}/${encodeURIComponent(labTest.date)}/${encodeURIComponent(labTest.time)}`,
                 { method: "DELETE" }
             );
 
@@ -231,7 +231,7 @@ const Dashboard = () => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/appointments/${encodeURIComponent(user.email)}/${encodeURIComponent(appointment.date)}/${encodeURIComponent(appointment.time)}`,
+                `https://curehouzz-backend.onrender.com/appointments/${encodeURIComponent(user.email)}/${encodeURIComponent(appointment.date)}/${encodeURIComponent(appointment.time)}`,
                 { method: "DELETE" }
             );
 

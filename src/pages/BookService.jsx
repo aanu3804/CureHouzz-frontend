@@ -54,7 +54,7 @@ const BookService = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:5000/save-lab-booking", {
+            const response = await fetch("https://curehouzz-backend.onrender.com/save-lab-booking", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newServiceBooking),
