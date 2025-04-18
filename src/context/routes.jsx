@@ -15,7 +15,7 @@ import Contact from "../pages/Contact";
 import Doctors from "../pages/Doctors/Doctors";
 import Hospital from "../pages/Hospital";
 import DoctorsDetails from "../pages/Doctors/DoctorsDetails";
-import Pharmacare from "../pages/Pharmcare";
+import Pharmacare from "../pages/pharmcare";
 import AppointmentPage from "../pages/AppointmentPage";
 import Dashboard from "../pages/Dashboard"; // Add the Dashboard page import
 import Lab from "../pages/lab";
