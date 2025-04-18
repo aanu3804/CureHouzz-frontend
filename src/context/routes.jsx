@@ -13,7 +13,7 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Contact from "../pages/Contact";
 import Doctors from "../pages/Doctors/Doctors";
-import Hospital from "../pages/Hospital";
+import Hospital from "../pages/hospital";
 import DoctorsDetails from "../pages/Doctors/DoctorsDetails";
 import Pharmacare from "../pages/pharmcare";
 import AppointmentPage from "../pages/AppointmentPage";
